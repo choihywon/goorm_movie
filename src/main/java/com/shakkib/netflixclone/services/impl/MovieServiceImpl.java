@@ -53,7 +53,7 @@ public class MovieServiceImpl implements MovieService {
         return true;
     }
 
-    public Boolean checkUser(Long userId) throws UserDetailsNotFoundException {
+    public boolean checkUser(Long userId) throws UserDetailsNotFoundException {
         return userServiceImpl.checkUserByUserId(userId);
     }
 }
