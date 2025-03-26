@@ -1,6 +1,5 @@
 package com.shakkib.netflixclone.services.impl;
 
-import com.shakkib.netflixclone.dtoes.MovieCreateDTO;
 import com.shakkib.netflixclone.dtoes.MovieListDTO;
 import com.shakkib.netflixclone.entity.Genre;
 import com.shakkib.netflixclone.entity.Movie;
@@ -24,9 +23,7 @@ import java.util.stream.IntStream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class MovieServiceImplTest {
@@ -213,6 +210,27 @@ class MovieServiceImplTest {
         assertThat(result).hasSize(10000);
     }
 
+    @Test
+    @DisplayName("비활성화된 영화는 조회 결과에 포함되지 않는다")
+    void getAllMovies_shouldExcludeInactiveMovies() {
+        // given
+        Movie activeMovie = new Movie(1L, 101L, "Active Movie", "Original", "poster.jpg", false, "desc", LocalDate.now(), new Genre(), LocalDateTime.now(), LocalDateTime.now());
+        Movie inactiveMovie = new Movie(2L, 102L, "Inactive Movie", "Original", "poster.jpg", false, "desc", LocalDate.now(), new Genre(), LocalDateTime.now(), LocalDateTime.now());
+
+        // 비활성화 시키기
+        inactiveMovie.deactivate();
+
+        List<Movie> movies = List.of(activeMovie); // DB에선 비활성화된 영화는 안 꺼내겠지
+
+        when(movieRepository.findAllByIsUseTrue()).thenReturn(movies);
+
+        // when
+        List<MovieListDTO> result = movieService.getAllMovies();
+
+        // then
+        assertThat(result).hasSize(1);
+        assertThat(result.get(0).getTitle()).isEqualTo("Active Movie");
+    }
     // saveMovie() 메소드에 대한 텍스트
     @Test
     @DisplayName("영화 저장")
@@ -262,5 +280,4 @@ class MovieServiceImplTest {
         // findById 메소드 호출 횟수 검증
         verify(genreRepository, times(1)).findById(1L);
     }
-
 }

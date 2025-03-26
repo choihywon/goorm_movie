@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "genre")
 @Getter
@@ -30,4 +33,4 @@ public class Genre {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-} 
+}
