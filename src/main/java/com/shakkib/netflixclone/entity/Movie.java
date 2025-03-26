@@ -80,4 +80,10 @@ public class Movie {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
+    //Test코드 작성
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 }

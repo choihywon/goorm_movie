@@ -4,7 +4,7 @@ import com.shakkib.netflixclone.dtoes.MovieCreateDTO;
 import com.shakkib.netflixclone.dtoes.MovieDTO;
 import com.shakkib.netflixclone.dtoes.MovieListDTO;
 import com.shakkib.netflixclone.entity.Movie;
-import com.shakkib.netflixclone.exceptions.MovieDetailsNotFoundException;
+
 import java.util.List;
 import java.util.Optional;
 

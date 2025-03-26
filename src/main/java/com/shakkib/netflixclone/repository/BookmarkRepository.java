@@ -3,7 +3,6 @@ package com.shakkib.netflixclone.repository;
 import com.shakkib.netflixclone.entity.BookMark;
 import com.shakkib.netflixclone.entity.Movie;
 import com.shakkib.netflixclone.entity.User;
-import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

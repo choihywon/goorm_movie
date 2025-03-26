@@ -2,17 +2,10 @@ package com.shakkib.netflixclone.controllers;
 
 import com.shakkib.netflixclone.dtoes.MovieDTO;
 import com.shakkib.netflixclone.dtoes.MovieListDTO;
-import com.shakkib.netflixclone.entity.Movie;
-import com.shakkib.netflixclone.exceptions.MovieDetailsNotFoundException;
-import com.shakkib.netflixclone.exceptions.UserDetailsNotFoundException;
 import com.shakkib.netflixclone.services.MovieService;
-import com.shakkib.netflixclone.services.impl.MovieServiceImpl;
-import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

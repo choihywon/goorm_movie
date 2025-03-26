@@ -1,6 +1,5 @@
 package com.shakkib.netflixclone.dtoes;
 
-import com.shakkib.netflixclone.entity.Role;
 import com.shakkib.netflixclone.entity.User;
 import lombok.Getter;
 import lombok.Setter;

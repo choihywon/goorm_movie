@@ -1,6 +1,5 @@
 package com.shakkib.netflixclone.jwt;
 
-import com.shakkib.netflixclone.dtoes.CustomUserDetails;
 import com.shakkib.netflixclone.entity.RefreshToken;
 import com.shakkib.netflixclone.repository.RefreshTokenRepository;
 import jakarta.servlet.FilterChain;

@@ -18,4 +18,13 @@ public class Admin {
 
     @OneToOne(mappedBy = "admin")
     private AdminAccount adminAccount;
+
+    //기본 생성자 (JPA 사용을 위한 필수)
+    protected Admin() {}
+
+    // 테스트를 위한 생성자 추가
+    public Admin(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
 }

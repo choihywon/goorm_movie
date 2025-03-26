@@ -3,7 +3,6 @@ package com.shakkib.netflixclone.controllers;
 import com.shakkib.netflixclone.dtoes.AdminDTO;
 import com.shakkib.netflixclone.dtoes.MovieCreateDTO;
 import com.shakkib.netflixclone.dtoes.UserDTO;
-import com.shakkib.netflixclone.entity.Genre;
 import com.shakkib.netflixclone.entity.Movie;
 import com.shakkib.netflixclone.exceptions.UserDetailsNotFoundException;
 import com.shakkib.netflixclone.repository.GenreRepository;
@@ -13,10 +12,8 @@ import com.shakkib.netflixclone.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -79,4 +76,4 @@ public class AdminController {
         }
     }
 }
- 
+

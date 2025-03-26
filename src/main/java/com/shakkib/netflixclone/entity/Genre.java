@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table(name = "genre")
 @Getter
@@ -26,5 +23,11 @@ public class Genre {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+
+    //Test코드 작성
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }
