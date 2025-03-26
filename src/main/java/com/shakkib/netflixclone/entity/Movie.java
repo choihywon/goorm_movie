@@ -84,6 +84,6 @@ public class Movie {
     //Test코드 작성
     public void setTitle(String title) {
         this.title = title;
-    }
+    } 
 
 }
